@@ -23,14 +23,14 @@ function ProfileDropdown({onClick=null, mobile=false}) {
       {profile.map((p) => {
         if (p === "Logout") {
           return mobile ? (
-            <Btn>Logout</Btn>
+            <Btn key={p}>Logout</Btn>
           ) : (
-            <button onClick={logout} className="">
+            <button onClick={logout} key={p}>
               {p}
             </button>
           );
         }
-        return <NavLink to={p.route} onClick={onClick}>{p.name}</NavLink>;
+        return <NavLink to={p.route} onClick={onClick} key={p.name}>{p.name}</NavLink>;
       })}
     </>
   );

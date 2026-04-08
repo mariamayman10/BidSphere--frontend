@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../logo";
 import Btn from "../btn";
 import { HiBars4 } from "react-icons/hi2";
@@ -28,6 +28,7 @@ function MobileNav({ className }) {
   const params = new URLSearchParams(location.search);
   const categoryParam = params.get("category");
   const statusParam = params.get("status");
+  const navigate = useNavigate();
 
   return (
     <nav className={`${className} px-6 py-5`}>
@@ -110,7 +111,7 @@ function MobileNav({ className }) {
               <ProfileDropdown onClick={() => setOpen(false)} mobile={true} />
             </div>
           ) : (
-            <Btn>Sign In</Btn>
+            <Btn onClick={() => navigate("auth/signin")}>Sign In</Btn>
           )}
         </div>
       </div>

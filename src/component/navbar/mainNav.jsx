@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../logo";
 import Btn from "../btn";
 import { FaUser } from "react-icons/fa";
@@ -24,6 +24,7 @@ function MainNav({ className }) {
   const params = new URLSearchParams(location.search);
   const categoryParam = params.get("category");
   const statusParam = params.get("status");
+  const navigate = useNavigate();
 
   return (
     <nav
@@ -76,7 +77,7 @@ function MainNav({ className }) {
               </div>
             </div>
           ) : (
-            <Btn>Sign In</Btn>
+            <Btn onClick={() => navigate("auth/signin")}>Sign In</Btn>
           )}
         </div>
       </div>

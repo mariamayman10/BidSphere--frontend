@@ -9,7 +9,6 @@ function DropdownCol({ arr, param, paramValue }) {
         {arr.map((item) => {
           const value = item.toLowerCase();
           const isActive = paramValue === value;
-          console.log(isActive)
           return (
             <Link
               key={item}
