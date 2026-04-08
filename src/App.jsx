@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './component/navbar/navbar';
-import Footer from './component/footer';
+import AuthLayout from './layouts/authLayout';
+import MainLayout from "./layouts/mainLayout";
+
 import Home from './pages/home';
 import FAQ from './pages/faq';
 import Profile from './pages/profile';
@@ -10,28 +11,30 @@ import Auctions from './pages/auctions';
 import CreateAuction from "./pages/createAuction";
 import AuctionDetails from "./pages/auctionDetails";
 import './App.css'
+import NotFound from './pages/notFound';
 
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
-        <Route path="auth">
+        <Route path="auth" element={<AuthLayout />}>
           <Route path="signup" element={<SignUp />} />
           <Route path="signin" element={<SignIn />} />
         </Route>
-        <Route path="home" element={<Home />} />
-        <Route path="auctions" element={<Auctions />} />
-        <Route path="auction">
-          <Route path="create" element={<CreateAuction />} />
-          <Route path=":id" element={<AuctionDetails />} />
+        <Route element={<MainLayout/>}>
+          <Route path="home" element={<Home />} />
+          <Route path="auctions" element={<Auctions />} />
+          <Route path="auction">
+            <Route path="create" element={<CreateAuction />} />
+            <Route path=":id" element={<AuctionDetails />} />
+          </Route>
+          <Route path="faq" element={<FAQ />} />
+          <Route path="me" element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="faq" element={<FAQ />} />
-        <Route path="me" element={<Profile />} />
       </Routes>
-      <Footer/>
     </BrowserRouter>
   );
 }
