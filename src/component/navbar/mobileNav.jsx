@@ -4,7 +4,7 @@ import Logo from "../logo";
 import Btn from "../btn";
 import { HiBars4 } from "react-icons/hi2";
 import { IoClose } from "react-icons/io5";
-import { LiaAngleDownSolid } from "react-icons/lia";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 import DropdownCol from "./dropdownCol";
 import ProfileDropdown from "./profileDropdown";
 
@@ -75,13 +75,15 @@ function MobileNav({ className }) {
               to="auctions"
             >
               <span>Auctions</span>
-              <LiaAngleDownSolid
-                className={`transition ${showAuctions ? "rotate-180" : ""}`}
-              />
+              {showAuctions ? (
+                <FaMinus className="transition-transform duration-300" />
+              ) : (
+                <FaPlus />
+              )}
             </NavLink>
 
             {showAuctions && (
-              <div className="mt-3 ml-3 flex flex-col gap-3">
+              <div className="mt-3 ml-3 flex flex-col gap-3 transition-transform duration-300">
                 <div>
                   <DropdownCol
                     arr={categories}

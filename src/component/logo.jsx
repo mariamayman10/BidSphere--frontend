@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 function Logo() {
   return (
-    <div>
+    <NavLink to="home" >
       <img src="/images/logo.png" alt="logo" className="w-35" />
-    </div>
+    </NavLink>
   );
 }
 
