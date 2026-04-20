@@ -20,7 +20,7 @@ const categories = [
 
 function CategoriesSection() {
   return (
-    <div className="py-15 xl:px-20 md:px-15 px-10">
+    <div className="pt-20 xl:px-20 md:px-15 px-10">
       <SectionHeader title="Auction Categories" />
       <div className="flex justify-center flex-wrap gap-5">
         {categories.map((c) => (
