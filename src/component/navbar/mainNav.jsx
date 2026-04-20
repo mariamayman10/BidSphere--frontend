@@ -6,6 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import DropdownCol from "./dropdownCol";
 import ProfileDropdown from "./profileDropdown";
+import { useEffect, useState } from "react";
 
 const categories = [
   "Antiques",
@@ -19,6 +20,7 @@ const categories = [
 const status = ["Upcoming", "Live", "Ended"];
 
 function MainNav({ className }) {
+  const [scrolled, setScrolled] = useState(false);
   const userToken = useSelector((store) => store.user.token);
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -26,13 +28,25 @@ function MainNav({ className }) {
   const statusParam = params.get("status");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
-      className={`${className} md:px-10 px-6 py-5 rounded-bl-lg rounded-br-lg`}
+      className={`${className} md:px-10 px-6 py-5 rounded-bl-lg rounded-br-lg ${
+        scrolled
+          ? "bg-black/20 backdrop-blur-md"
+          : "bg-transparent"
+      }`}
     >
       <div className="nav-container flex justify-between items-center relative">
         <Logo />
-        <div className="flex items-center center absolute left-1/2 -translate-x-1/2 ">
+        <div className="flex items-center center absolute left-1/2 -translate-x-1/2 font-medium">
           <NavLink to="home" className="md:mr-8 mr-5">
             Home
           </NavLink>

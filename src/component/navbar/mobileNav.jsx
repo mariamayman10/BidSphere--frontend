@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../logo";
 import Btn from "../btn";
@@ -23,6 +23,7 @@ const status = ["Upcoming", "Live", "Ended"];
 function MobileNav({ className }) {
   const [open, setOpen] = useState(false);
   const [showAuctions, setShowAuctions] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const userToken = "d";
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -30,8 +31,20 @@ function MobileNav({ className }) {
   const statusParam = params.get("status");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className={`${className} px-6 py-5`}>
+    <nav
+      className={`${className} px-6 py-5 ${
+        scrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
+      }`}
+    >
       <div className="flex justify-between items-center">
         <Logo />
         <HiBars4
