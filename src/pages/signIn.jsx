@@ -9,13 +9,13 @@ function SignIn() {
         <MdArrowBack />
         <a href="/home">Go Home</a>
       </div>
-      <div className="flex flex-col items-center h-fit md:w-150 w-full py-20 sm:px-10 px-7 rounded-2xl bg-[#0000001f]">
+      <div className="flex flex-col items-center h-fit md:w-150 w-full py-20 sm:px-10 px-7 rounded-md bg-[#0000001f]">
         <img src="/images/logo.png" alt="logo" className="w-50" />
         <div className="w-full mt-10">
           <form onSubmit={signin}>
             <input type="email" placeholder="Email" className="mb-5" />
             <input type="password" placeholder="Password" className="mb-10" />
-            <Btn className="rounded-3xl w-full text-light">Sign In</Btn>
+            <Btn className="rounded-sm w-full text-light">Sign In</Btn>
           </form>
         </div>
         <div className="mt-7">

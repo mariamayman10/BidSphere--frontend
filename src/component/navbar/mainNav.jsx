@@ -28,7 +28,7 @@ function MainNav({ className }) {
 
   return (
     <nav
-      className={`${className} md:px-10 px-6 py-5 rounded-bl-2xl rounded-br-2xl`}
+      className={`${className} md:px-10 px-6 py-5 rounded-bl-lg rounded-br-lg`}
     >
       <div className="nav-container flex justify-between items-center relative">
         <Logo />
@@ -47,7 +47,7 @@ function MainNav({ className }) {
               </div>
             </NavLink>
 
-            <div className="hidden group-hover:flex p-7 md:gap-5 gap-4 text-light bg-surface-100 rounded-3xl absolute top-7">
+            <div className="hidden group-hover:flex p-7 md:gap-5 gap-4 text-light bg-surface-100 rounded-md absolute top-7">
               <div className="md:w-50 w-35">
                 <DropdownCol
                   arr={categories}
