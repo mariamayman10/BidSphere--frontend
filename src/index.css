@@ -155,3 +155,22 @@ input:hover {
 }
 
 
+/*  SWIPER  */
+.swiper-wrapper{
+  padding-bottom: 40px;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px;
+}
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.25) !important;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.swiper-pagination-bullet-active {
+  background: var(--clr-primary-a0) !important;
+  transform: scale(1.2);
+}

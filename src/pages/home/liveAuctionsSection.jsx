@@ -1,4 +1,5 @@
 import AuctionCard from "../../component/auctionCard/auctionCard";
+import AuctionSwiper from "./auctionSwiper";
 import SectionHeader from "./sectionHeader";
 
 function LiveAuctionsSection() {
@@ -13,16 +14,12 @@ function LiveAuctionsSection() {
     category: "Antiques",
     imgUrl: "antique6.jpg",
   };
+  const auctions = Array.from({ length: 5 }).map(() => auction);
+
   return (
-    <div className="py-15 xl:px-20 md:px-15 px-10">
+    <div className="pt-20 xl:px-20 md:px-15 px-10">
       <SectionHeader title="Top Live Auctions" />
-      <div className="flex gap-5 overflow-x-scroll pb-2">
-        {Array.from({ length: 5 }).map((_, idx) => (
-          <div className="min-w-87.5">
-            <AuctionCard key={idx} auction={auction} />
-          </div>
-        ))}
-      </div>
+      <AuctionSwiper auctions={auctions} />
     </div>
   );
 }
