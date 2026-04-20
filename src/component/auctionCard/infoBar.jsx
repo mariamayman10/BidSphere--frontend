@@ -1,4 +1,3 @@
-
 function InfoBar({ list, val }) {
   const config = list[val];
 

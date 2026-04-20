@@ -23,13 +23,17 @@ export default {
           400: "var(--clr-surface-a40)",
           500: "var(--clr-surface-a50)",
         },
-        surfacetonal:{
+        surfacetonal: {
           DEFAULT: "var(--clr-surface-tonal-a0)",
           100: "var(--clr-surface-tonal-a10)",
           200: "var(--clr-surface-tonal-a20)",
           300: "var(--clr-surface-tonal-a30)",
           400: "var(--clr-surface-tonal-a40)",
           500: "var(--clr-surface-tonal-a50)",
+        },
+        card: {
+          DEFAULT: "var(--clr-card-bg)",
+          hover: "var(--clr-card-hover-bg)"
         },
         light: {
           DEFAULT: "var(--clr-light-a0)",
@@ -50,7 +54,7 @@ export default {
           DEFAULT: "var(--clr-info-a0)",
         },
       },
-      keyframes:{
+      keyframes: {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },

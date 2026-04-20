@@ -4,9 +4,43 @@
   background-position: right center;
   background-repeat: no-repeat;
 }
-.home-page{
+.home-page main {
   background-image: url("/images/home-main.png");
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
+}
+
+/*  CARDS  */
+.auction-card {
+  background-color: var(--clr-card-bg);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.auction-card:hover {
+  background-color: var(--clr-card-hover-bg);
+  transform: scale(1.01);
+  transition: 0.3s;
+}
+
+/*  CATEGORY CARD  */
+.category-card {
+  background-color: var(--clr-card-bg);
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.category-card:hover {
+  background-color: transparent;
+  border: 1px solid var(--clr-primary-a0);
+  color: var(--clr-primary-a0);
+  transition: 0.3s;
+}
+.category-card .category-icon{
+  transition: 0.5s;
+}
+.category-card:hover .category-icon{
+  transform: scale(1.2);
+  transition: 0.5s;
 }

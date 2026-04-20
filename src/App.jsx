@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AuthLayout from './layouts/authLayout';
 import MainLayout from "./layouts/mainLayout";
 
-import Home from './pages/home';
+import Home from './pages/home/home';
 import FAQ from './pages/faq';
 import Profile from './pages/profile';
 import SignUp from './pages/signUp';

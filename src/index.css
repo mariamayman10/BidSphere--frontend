@@ -89,8 +89,6 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  background-color: transparent;
-  /* background-color: var(--clr-surface-a10); */
 }
 nav a {
   color: var(--clr-surface-a50);
@@ -99,7 +97,7 @@ nav a:hover {
   color: var(--clr-light-a0);
 }
 nav a.active {
-  color: var(--clr-primary-a20);
+  color: var(--clr-primary-a0);
 }
 
 /*  BUTTONS  */
@@ -156,16 +154,4 @@ input:hover {
   transition: 0.3s;
 }
 
-/*  CARDS  */
-.auction-card{
-  background-color: var(--clr-card-bg);
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-.auction-card:hover{
-  background-color: var(--clr-card-hover-bg);
-  transform: scale(1.01);
-    transition: 0.3s;
 
-}
