@@ -4,3 +4,9 @@
   background-position: right center;
   background-repeat: no-repeat;
 }
+.home-page{
+  background-image: url("/images/home-main.png");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}

@@ -44,6 +44,8 @@
   --clr-surface-a30: #575757;
   --clr-surface-a40: #717171;
   --clr-surface-a50: #ffffffb3;
+  --clr-card-bg: #59595932;
+  --clr-card-hover-bg: #5959594c;
 
   /** Theme tonal surface colors */
   --clr-surface-tonal-a0: #271b15;
@@ -80,7 +82,10 @@
 body {
   font-family: "Nunito";
   background-color: var(--clr-surface-a0);
+  color: var(--clr-light-a0);
 }
+
+/*  NAVBAR  */
 nav {
   position: fixed;
   width: 100%;
@@ -96,6 +101,8 @@ nav a:hover {
 nav a.active {
   color: var(--clr-primary-a20);
 }
+
+/*  BUTTONS  */
 button {
   outline: none;
   border: none;
@@ -108,7 +115,6 @@ button:hover {
 .primary-btn {
   background-color: var(--clr-primary-a0);
   color: var(--clr-dark-a0);
-  
 }
 .primary-btn:hover {
   background-color: transparent;
@@ -129,6 +135,8 @@ button:hover {
 .ghost-btn:hover {
   color: var(--clr-primary-a20);
 }
+
+/*  INPUT  */
 input {
   outline: none;
   background-color: transparent;
@@ -139,12 +147,25 @@ input {
   border-radius: 3px;
   width: 100%;
   color: var(--clr-surface-a50);
-  
 }
-input::placeholder{
-  color: var(--clr-surface-a50)
+input::placeholder {
+  color: var(--clr-surface-a50);
 }
 input:hover {
   border-bottom: 1px solid var(--clr-primary-a0);
   transition: 0.3s;
+}
+
+/*  CARDS  */
+.auction-card{
+  background-color: var(--clr-card-bg);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.auction-card:hover{
+  background-color: var(--clr-card-hover-bg);
+  transform: scale(1.01);
+    transition: 0.3s;
+
 }
