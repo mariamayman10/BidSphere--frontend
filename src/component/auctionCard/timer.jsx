@@ -20,10 +20,10 @@ function Timer({ startsAt, endsAt, now }) {
   const seconds = totalSeconds % 60;
 
   return (
-    <div>
-      <span className="font-light text-surface-500 text-right">{label}</span>
+    <div className="text-right">
+      <span className="font-light text-surface-500">{label}</span>
 
-      <p className="text-right">
+      <p>
         {days > 0 && `${days}d `}
         {String(hours).padStart(2, "0")}:{String(minutes).padStart(2, "0")}:
         {String(seconds).padStart(2, "0")}

@@ -6,7 +6,7 @@ function Footer() {
   const token = useSelector((store) => store.user.token);
   return (
     <footer className="bg-surface-100 text-light mt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 grid-cols-2 gap-10">
+      <div className="max-w-7xl mx-auto px-15 py-12 grid md:grid-cols-4 grid-cols-2 gap-10">
         <div>
           <Logo />
           <p className="mt-4 text-sm text-light/70">Bid. Win. Own.</p>
