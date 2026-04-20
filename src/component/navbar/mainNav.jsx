@@ -38,7 +38,7 @@ function MainNav({ className }) {
 
   return (
     <nav
-      className={`${className} md:px-10 px-6 py-5 rounded-bl-lg rounded-br-lg ${
+      className={`${className} md:px-10 px-6 py-5 rounded-bl-lg rounded-br-lg z-50 ${
         scrolled
           ? "bg-black/20 backdrop-blur-md"
           : "bg-transparent"

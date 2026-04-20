@@ -41,7 +41,7 @@ function MobileNav({ className }) {
 
   return (
     <nav
-      className={`${className} px-6 py-5 ${
+      className={`${className} px-6 py-5 z-50 ${
         scrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
       }`}
     >
